@@ -6,7 +6,6 @@ public class AddTask implements Runnable {
 	
 	private ConcurrentLinkedDeque<String> list;
 
-
 	@Override
 	public void run() {
 
