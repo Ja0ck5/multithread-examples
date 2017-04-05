@@ -1,4 +1,4 @@
-package com.lyj.multithread;
+package com.lyj.boundedbuffer;
 /*
  * Written by Doug Lea and Martin Buchholz with assistance from
  * members of JCP JSR-166 Expert Group and released to the public

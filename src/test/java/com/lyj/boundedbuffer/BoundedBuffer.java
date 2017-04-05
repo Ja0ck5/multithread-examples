@@ -1,10 +1,8 @@
-package com.lyj.multithread.boundedbuffer;
+package com.lyj.boundedbuffer;
 
 import java.util.concurrent.Semaphore;
 
-import org.junit.runner.notification.RunListener.ThreadSafe;
 
-@ThreadSafe
 public class BoundedBuffer<E> {
 
 	private final Semaphore availableItems,availableSpaces;

@@ -1,6 +1,5 @@
-package com.lyj.multithread.boundedbuffer;
+package com.lyj.boundedbuffer;
 
-import org.junit.Test;
 
 import junit.framework.TestCase;
 
@@ -28,7 +27,7 @@ public class BoundedBufferTest extends TestCase {
 			public void run() {
 				try {
 					Integer unused = bb.take();
-					fail();//执行到这里，意味着没有阻塞，表示出现错误
+					fail();//执行到这里，意味�?没有阻塞，表示出现错�?
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
