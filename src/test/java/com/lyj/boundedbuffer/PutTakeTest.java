@@ -106,7 +106,7 @@ public class PutTakeTest {
 	}
 	
 	public static void main(String[] args) {
-		new PutTakeTest(10, 10, 1000).test();
+		new PutTakeTest(10, 10, 10000).test();
 		pool.shutdown();
 	}
 }

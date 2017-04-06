@@ -28,7 +28,7 @@ public class LineTask extends RecursiveTask<Integer> {
 			result = count(line, start, end, word);
 		} else {
 			// 行中的单词组分成两部分，创建两个新的LineTask对象来处理这两个组，在池中使用invokeAll()方法执行它们
-			int mid = (start + end) / 2;
+			int mid = (start + end) >>> 1;
 			LineTask task1 = new LineTask(line, start, mid, word);
 			LineTask task2 = new LineTask(line, mid, end, word);
 			invokeAll(task1, task2);
