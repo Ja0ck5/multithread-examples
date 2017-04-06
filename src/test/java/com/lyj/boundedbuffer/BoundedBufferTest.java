@@ -50,6 +50,13 @@ public class BoundedBufferTest extends TestCase {
 		double[] data = new double[100000];
 	}
 	private static final int CAPACITY = 1000;
+	/**
+	 * 将多个大型对象插入到一个有界缓存中，然后再将它们移除
+	 * 第2个堆快照中的内存用量应该与第一个对快照中的内存用量基本相同。
+	 * 然而如果 doExtract 忘记将返回元素的索引置空(items[i]=null)
+	 * 那么两次快照的内存用量明显不同，这就是为什么需要显示地将变量置空的情况
+	 * @throws InterruptedException
+	 */
 	void testLeak() throws InterruptedException{
 		BoundedBuffer<Big> bb = new BoundedBuffer<Big>(CAPACITY);
 //		int heapSize1 = /*生成堆快照*/
