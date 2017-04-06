@@ -1,13 +1,13 @@
 package com.lyj.boundedbuffer;
 
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
 
 /**
  * 在初始化 CyclicBarrier 时将计数值指定为工作者线程数量再加一(测试线程)，并在运行开始和结束时，
@@ -46,7 +46,8 @@ public class PutTakeTest {
 			System.out.println("-------------all threads start------------");
 			barrier.await();// 等待所有线程执行完成
 			System.out.println("-------------all threads end------------");
-			assertEquals(putSum.get(), takeSum.get());
+//			assertEquals(putSum.get(), takeSum.get());
+//			assertEquals(putSum.get(), takeSum.get());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (BrokenBarrierException e) {
