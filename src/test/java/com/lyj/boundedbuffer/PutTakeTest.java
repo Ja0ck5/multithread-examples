@@ -1,5 +1,7 @@
 package com.lyj.boundedbuffer;
 
+import static org.junit.Assert.assertEquals;
+
 //import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.BrokenBarrierException;
@@ -46,8 +48,7 @@ public class PutTakeTest {
 			System.out.println("-------------all threads start------------");
 			barrier.await();// 等待所有线程执行完成
 			System.out.println("-------------all threads end------------");
-//			assertEquals(putSum.get(), takeSum.get());
-//			assertEquals(putSum.get(), takeSum.get());
+			assertEquals(putSum.get(), takeSum.get());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (BrokenBarrierException e) {
