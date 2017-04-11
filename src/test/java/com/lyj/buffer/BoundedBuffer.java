@@ -1,4 +1,4 @@
-package com.lyj.boundedbuffer;
+package com.lyj.buffer;
 
 import java.util.concurrent.Semaphore;
 

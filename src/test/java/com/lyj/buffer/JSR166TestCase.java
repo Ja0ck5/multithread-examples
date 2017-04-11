@@ -1,4 +1,4 @@
-package com.lyj.boundedbuffer;
+package com.lyj.buffer;
 /*
  * Written by Doug Lea and Martin Buchholz with assistance from
  * members of JCP JSR-166 Expert Group and released to the public

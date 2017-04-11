@@ -1,6 +1,4 @@
-package com.lyj.boundedbuffer;
-
-
+package com.lyj.buffer;
 import junit.framework.TestCase;
 
 public class BoundedBufferTest extends TestCase {
