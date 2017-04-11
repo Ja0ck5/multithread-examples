@@ -1,4 +1,4 @@
-package com.lyj.custom;
+package com.lyj.boundedbuffer;
 
 public class GrumpyBoundedBuffer<V> extends BaseBoundedBuffer<V> {
 

@@ -1,4 +1,4 @@
-package com.lyj.custom;
+package com.lyj.boundedbuffer;
 
 /**
  * 实现了明晰地状态依赖性管理

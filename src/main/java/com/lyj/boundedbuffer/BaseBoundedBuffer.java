@@ -1,4 +1,4 @@
-package com.lyj.custom;
+package com.lyj.boundedbuffer;
 
 import org.omg.Messaging.SyncScopeHelper;
 

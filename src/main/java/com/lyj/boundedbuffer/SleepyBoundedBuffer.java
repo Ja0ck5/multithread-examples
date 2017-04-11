@@ -1,4 +1,4 @@
-package com.lyj.custom;
+package com.lyj.boundedbuffer;
 
 public class SleepyBoundedBuffer<V> extends BaseBoundedBuffer<V> {
 
