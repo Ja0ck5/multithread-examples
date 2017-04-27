@@ -29,11 +29,8 @@ public class Algorithms {
 					 * If the compiler isn't able to optimize the branch into a
 					 * conditional move, you can try some hacks if you are willing
 					 * to sacrifice readability for performance.
-					 * 
 					 * Replace:
-					 * 
 					 * if (data[c] >= 128) sum += data[c]; with:
-					 * 
 					 * int t = (data[c] - 128) >> 31; sum += ~t & data[c];
 					 */
 					if (data[c] >= 128)
