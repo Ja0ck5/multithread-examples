@@ -1,8 +1,6 @@
 package com.lyj.test;
 
 
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -11,30 +9,30 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
+import org.junit.Test;
+
 public class TestFull {
 	
 	static BlockingQueue<Runnable> blockingQueue= new LinkedBlockingQueue<>(2);
 	static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 5, 1000, TimeUnit.SECONDS, blockingQueue);
 	static ThreadPoolExecutor threadCallerRunExecutor = new ThreadPoolExecutor(2, 5, 1000, TimeUnit.SECONDS, blockingQueue,new ThreadPoolExecutor.CallerRunsPolicy());
 	
-	/*@Test
-	public void testFull(){
-		ExecutorService threadPool = Executors.newFixedThreadPool(2);
-		for (int i = 0; i < 10; i++) {
-			threadPool.execute(new FullRunnable());
-		}
-		
-		threadPool.shutdown();
-	}*/
+	@After
+	public void tearDown() throws InterruptedException{
+		threadPoolExecutor.awaitTermination(60, TimeUnit.MINUTES);
+		threadCallerRunExecutor.awaitTermination(60, TimeUnit.MINUTES);
+	}
 	
-	public static void main(String[] args) {
+	@Test
+	public void testFull(){
 		
 //		fixedPool();
 //		fixedQueuePool();
 //		callerRunsPool();
 		catchInQueuePool();
 	}
-
+	
 	/**
 	 * 
 	 */
