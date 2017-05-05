@@ -52,8 +52,13 @@ public class TestFull {
 				}
 				//取出 queue 并执行
 				System.out.println("in catching...... ");
-				for (Iterator<Runnable> iterator = queue.iterator(); iterator.hasNext();) {
+				/*for (Iterator<Runnable> iterator = queue.iterator(); iterator.hasNext();) {
 					Runnable runnable = iterator.next();
+					if (!threadPoolExecutor.isShutdown()) {
+						new Thread(runnable).start();
+					}
+				}*/
+				for (Runnable runnable : queue) {
 					if (!threadPoolExecutor.isShutdown()) {
 						new Thread(runnable).start();
 					}
