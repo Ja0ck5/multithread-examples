@@ -13,13 +13,13 @@ public class Main {
 		MyExecutor myExecutor = new MyExecutor(2, 4, 1000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<Runnable>());
 		List<Future<String>> results = new ArrayList<>();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
 			SleepTwoSecondsTask task = new SleepTwoSecondsTask();
 			Future<String> result = myExecutor.submit(task);
 			results.add(result);
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 100; i++) {
 			try {
 				String result = results.get(i).get();
 				System.out.printf("Main: Result for Task %d : %s\n", i, result);
@@ -30,8 +30,8 @@ public class Main {
 
 		myExecutor.shutdown();
 
-		// »ñÈ¡ºó5¸öÈÎÎñµÄÖ´ÐÐ½á¹û
-		for (int i = 5; i < 10; i++) {
+		// ï¿½ï¿½È¡ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð½ï¿½ï¿½
+		for (int i = 5; i < 100; i++) {
 			try {
 				String result = results.get(i).get();
 				System.out.printf("Main: Result for Task %d : %s\n", i, result);
